@@ -1,1 +1,16 @@
+import sys
+import time
 
+def slow_print(text, delay=0.05):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+
+RED = '\033[91m'
+RESET = '\033[0m'
+
+message = "Please switch to Python 3.11 or 3.12 because support for Python 3.13 is not yet added."
+
+slow_print(RED + message + RESET)
